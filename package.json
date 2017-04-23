@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-nativescript-phone",     "homepage": "https://github.com/npmtest/node-npmtest-nativescript-phone",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-nativescript-phone.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [nativescript-phone (v1.3.0)](https://github.com/msywensky/nativescript-phone)  [![npm package](https://img.shields.io/npm/v/npmtest-nativescript-phone.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-nativescript-phone) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-nativescript-phone.svg)](https://travis-ci.org/npmtest/node-npmtest-nativescript-phone)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-nativescript-phone",
+    "keywords": [
+        "coverage",
+        "test",
+        "nativescript-phone"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_nativescript_phone.js",
+    "name": "npmtest-nativescript-phone",
+    "nameAlias": "npmtest_nativescript_phone",
+    "nameOriginal": "npmtest-nativescript-phone",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-nativescript-phone.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "2017.4.24"
+}
